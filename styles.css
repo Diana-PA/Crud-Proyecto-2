@@ -1,0 +1,9 @@
+.addTaskButton {
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+}
