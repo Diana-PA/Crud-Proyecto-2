@@ -21,65 +21,39 @@
     </header>
     <main style="padding: 2rem;">
         <div class="container text-center" style="padding: 2rem;">
-            <div class="row">
-                <div class="col-6 col-md-4">
-                    <label>Nombre y Apellido</label>
+            <form id="formulario">
+                <div class="row">
+                    <div class="col-6 col-md-4">
+                        <label>Nombre y Apellido</label>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <label>Carrera</label>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <label>Agregar</label>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <input id="txtNombreApellido" type="text" class="form-control" name="txtNombreApellido" aria-describedby="button-addon2">
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <input id="txtCarrera" type="text" class="form-control" name="txtCarrera" aria-describedby="button-addon2">
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <button type="submit" class="addTaskButton">+</button>
+                    </div>
                 </div>
-                <div class="col-6 col-md-4">
-                    <label>Carrera</label>
-                </div>
-                <div class="col-6 col-md-4">
-                    <label>Agregar</label>
-                </div>
-                <div class="col-6 col-md-4">
-                    <input type="text" class="form-control" name="txtNombreApellido" aria-describedby="button-addon2">
-                </div>
-                <div class="col-6 col-md-4">
-                    <input type="text" class="form-control" name="txtCarrera" aria-describedby="button-addon2">
-                </div>
-                <div class="col-6 col-md-4">
-                    <button type="submit" class="addTaskButton">+</button>
-                </div>
-            </div>
+            </form>
         </div>
         <div style="padding: 2rem;">
-            <table class="table">
+            <table id="TaskWrapper" class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Nombre y Apellido</th>
                     <th scope="col">Carrera</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Francisca Cabezas</td>
-                    <td>Psicología</td>
-                    <td>
-                        <button>Editar</button>
-                        <button>Eliminar</button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Elena Venegas</td>
-                    <td>Fonoaudiología</td>
-                    <td>
-                        <button>Editar</button>
-                        <button>Eliminar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Jacob Cáceres</td>
-                    <td>Pedagogía</td>
-                    <td>
-                        <button>Editar</button>
-                        <button>Eliminar</button>
-                    </td>
-                  </tr>
+                <tbody id="tbody">
                 </tbody>
               </table>
         </div>
