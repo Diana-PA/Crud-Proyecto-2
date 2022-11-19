@@ -3,7 +3,11 @@
     font-weight: bold;
     cursor: pointer;
     height: 30px;
-    width: 30px;
-    border-radius: 50%;
+    width: 100px;
+    border-radius: 10%;
     font-size: 18px;
+}
+
+.finDePagina {
+    background-color: black;
 }

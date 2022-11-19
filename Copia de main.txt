@@ -1,0 +1,93 @@
+document.getElementById("formulario").addEventListener("submit", crear)
+
+ 
+
+function crear(e){
+
+    txtNombreApellido = document.getElementById("txtNombreApellido").value
+
+    txtCarrera =  document.getElementById("txtCarrera").value
+
+ 
+
+    let registro = {
+
+        txtNombreApellido,
+
+        txtCarrera
+
+    }
+
+    if(localStorage.getItem("Nombres") === null){
+
+        let registros = []
+
+        registros.push(registro)
+
+        localStorage.setItem("Nombres", JSON.stringify(registros))
+
+    }else{
+
+        let registros = JSON.parse(localStorage.getItem("Nombres"))
+
+        registros.push(registro)
+
+        localStorage.setItem("Nombres", JSON.stringify(registros))
+
+    }
+
+    leer();
+
+    document.getElementById("formulario").reset();
+
+    e.preventDefault();
+
+ 
+
+}
+
+function leer(){
+
+    let registros = JSON.parse(localStorage.getItem("Nombres"));
+
+    document.getElementById("tbody").innerHTML = ""
+
+    for(let i = 0; i < registros.length; i++){
+
+        let txtNombreApellido = registros[i].txtNombreApellido
+
+       let  txtCarrera = registros[i].txtCarrera
+
+
+       document.getElementById("tbody").innerHTML +=
+
+       ` <tr>
+
+        <td>${txtNombreApellido} </td>
+
+        <td>${txtCarrera} </td>
+
+        <td> 
+        <button type="button" class="btn btn-outline-success">Editar</button>
+        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+        </td>
+       </tr>
+
+       `
+    }
+}
+leer();
+
+function removeTask(event) {
+
+    var taskToRemove = event.currentTarget.parentNode;
+    var taskId = taskToRemove.id;
+    taskWrapper.removeChild(taskToRemove);
+    taskList.forEach(function(value, i) {
+      if (value.taskId == taskId) {
+        taskList.splice(i, 1);
+      }
+    })
+
+    syncTask();
+  }
