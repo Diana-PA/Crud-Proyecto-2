@@ -87,4 +87,44 @@ function actualizar(i){
 
 }
 
+// Funcion Eliminar
+function eliminar(txtNombreApellido){
+    let registros = JSON.parse(localStorage.getItem("Nombres"));
+    for(let i = 0; i < registros.length; i++){
+        if(registros[i].txtNombreApellido === txtNombreApellido){
+            registros.splice(i,1);
+        }
+    }
+    localStorage.setItem("Nombres", JSON.stringify(registros));
+    leer();
+}
+
+function vistaPrincipal(){
+    document.getElementById("body").innerHTML = 
+    `
+    <form id="formulario">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <label>Nombre y Apellido</label>
+                </div>
+                <div class="col-6 col-md-4">
+                    <label>Carrera</label>
+                </div>
+                <div class="col-6 col-md-4">
+                    <button type="submit" class="addTaskButton" onclick="crear()">Agregar</button>
+                </div>
+                <div class="col-6 col-md-4">
+                    <input type="text" class="form-control" id="txtNombreApellido" aria-describedby="button-addon2">
+                </div>
+                <div class="col-6 col-md-4">
+                    <input type="text" class="form-control" id="txtCarrera" aria-describedby="button-addon2">
+                </div>
+                <div class="col-6 col-md-4">
+                </div>
+            </div>
+    </form>
+    `
+    leer();
+}
+
 leer();
